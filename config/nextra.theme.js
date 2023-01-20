@@ -71,6 +71,7 @@ const themeConfig = {
 
   toc: {
     float: true,
+    title: () => <h1>Toc Toc</h1>,
     extraContent: () => <h1>Toc Toc Ends Here</h1>
   },
 
@@ -79,9 +80,11 @@ const themeConfig = {
     prev: true
   },
 
-  gitTimestamp: ({ timestamp }) => (
-    <div>Updated at: { timestamp }</div>
-  )
+  gitTimestamp: ({ timestamp }) => {
+    return (
+      <div>Updated at: {timestamp.toISOString()}</div>
+    )
+  }
 }
 
 export default themeConfig
